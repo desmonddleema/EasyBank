@@ -1,0 +1,2 @@
+# EasyBank
+Challenge by FrontendMentor
