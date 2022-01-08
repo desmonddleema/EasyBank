@@ -1,17 +1,25 @@
 const btnhamburger = document.querySelector("#btnhamburger");
 const header = document.querySelector(".header");
+const body = document.querySelector("body");
 const overlay = document.querySelector(".overlay");
+const fadeElem = document.querySelectorAll(".has-fade");
 
 btnhamburger.addEventListener('click', function(){
     console.log("Hamburger clicked");
     if(header.classList.contains("open")){
         header.classList.remove("open");
-        overlay.classList.remove("fade-in");
-        overlay.classList.add("fade-out");
+        body.classList.remove("no-scroll");
+        fadeElem.forEach(function(element){
+            element.classList.remove("fade-in");
+            element.classList.add("fade-out");
+        })
     }
     else{
         header.classList.add("open");
-        overlay.classList.remove("fade-out");
-        overlay.classList.add("fade-in");
+        body.classList.add("no-scroll")
+        fadeElem.forEach(function(element){
+            element.classList.remove("fade-out");
+            element.classList.add("fade-in");
+        })
     }
 })

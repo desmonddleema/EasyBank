@@ -1,3 +1,7 @@
+.has-fade {
+  visibility: hidden;
+}
+
 @-webkit-keyframes fade-in {
   from {
     visibility: hidden;
@@ -8,6 +12,7 @@
     opacity: 0;
   }
   to {
+    visibility: visible;
     opacity: 1;
   }
 }
@@ -22,6 +27,7 @@
     opacity: 0;
   }
   to {
+    visibility: visible;
     opacity: 1;
   }
 }
@@ -88,6 +94,15 @@ body {
   font-weight: 300;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 a,
 a:visited,
 a:hover {
@@ -142,16 +157,16 @@ button,
   }
 }
 
-.header.open .header-menu > span:first-child {
+.header.open .header-toggle > span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.header.open .header-menu > span:nth-child(2) {
+.header.open .header-toggle > span:nth-child(2) {
   opacity: 0;
 }
 
-.header.open .header-menu > span:last-child {
+.header.open .header-toggle > span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
@@ -159,7 +174,7 @@ button,
 .header .overlay {
   opacity: 0;
   position: fixed;
-  top: 3.75rem;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -168,7 +183,10 @@ button,
 }
 
 .header .nav {
-  padding: 1.0625rem 1.5rem;
+  position: relative;
+  background-color: white;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 
 .header-logo img {
@@ -176,7 +194,7 @@ button,
   height: 1.375rem;
 }
 
-.header-menu > span {
+.header-toggle > span {
   display: block;
   width: 26px;
   height: 2px;
@@ -187,8 +205,27 @@ button,
           transform-origin: 2px 1px;
 }
 
-.header-menu > span:not(:last-child) {
+.header-toggle > span:not(:last-child) {
   margin-bottom: 6px;
+}
+
+.header__menu {
+  position: absolute;
+  width: calc(100% - 3rem);
+  left: 50%;
+  background: white;
+  padding: 1.625rem;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.header__menu a {
+  display: block;
+  color: #2d314d;
+  padding: 0.625rem;
+  text-align: center;
 }
 
 .header_links a {
