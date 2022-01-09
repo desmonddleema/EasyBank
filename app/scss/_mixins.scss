@@ -3,8 +3,12 @@ $breakpoints-up: (
   "large": "64em",
   "xlarge": "87.5em",
 );
+
+//em is wrt parent element
+//rem is wrt html document
+
 $breakpoints-down: (
-  "small": "39.9375",
+  "small": "39.9375em",
   "medium": "63.3975em",
   "large": "87.4375em",
 );
