@@ -574,4 +574,79 @@ button:hover,
   font-size: 0.875rem;
   line-height: 1.5;
 }
+
+.articles {
+  background-color: #fafafa;
+}
+
+.articles-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1;
+      grid-template-columns: 1;
+  gap: 1.875rem;
+}
+
+@media (min-width: 40em) {
+  .articles-grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .articles-grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.articles-item {
+  background-color: white;
+  border-radius: 0.3125rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.articles-item:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.articles-image {
+  height: 12.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.articles-text {
+  color: #9698a6;
+  padding: 1.875erm 1.875rem 2.5rem 1.875rem;
+}
+
+@media (min-width: 40em) {
+  .articles-text {
+    padding: 1.875rem 1.562rem;
+  }
+}
+
+.articles-author {
+  font-size: 0.625rem;
+  margin-bottom: 0.75rem;
+}
+
+.articles-title {
+  font-size: 1.0625rem;
+  color: #2d314d;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.articles-description {
+  font-size: 0.8125rem;
+}
 /*# sourceMappingURL=styles.css.map */
