@@ -17,6 +17,7 @@
   }
   //OVERLAY
   .overlay {
+    z-index: 1;
     opacity: 0;
     position: fixed;
     top: 0;
@@ -27,6 +28,7 @@
   }
 
   .nav {
+    z-index: 2;
     position: relative;
     background-color: $white;
     padding-top: 1.0625rem;
@@ -56,6 +58,7 @@
   }
 
   &__menu {
+    z-index: 1;
     position: absolute;
     width: calc(100% - 3rem);
     left: 50%;
@@ -70,6 +73,10 @@
       color: $darkBlue;
       padding: 0.625rem;
       text-align: center;
+      transition: color 150ms ease-in-out;
+      &:hover {
+        color: $limeGreen;
+      }
     }
   }
 

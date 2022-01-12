@@ -17,13 +17,15 @@ body {
   color: $grayishBlue;
   font-weight: 300;
   font-family: "Public Sans", sans-serif;
+  overflow-x: hidden;
 
+  @include breakpoint-down(medium) {
+    &.no-scroll {
+      overflow: hidden;
+    }
+  }
   @include breakpoint-up(large) {
     font-size: $font-md;
-  }
-
-  &.no-scroll {
-    overflow: hidden;
   }
 }
 
